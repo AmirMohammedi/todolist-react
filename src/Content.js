@@ -16,13 +16,19 @@ const Content = () => {
       item:"item3"
     }
     ])
+    const handleChange = (id) => {
+      const newList = items.map(item => item.id === id ? {...item, checked: !item.checked} : item);
+      setItems(newList);
+      localStorage.setItem('shoppingList',JSON.stringify(newList));
+    }
+    
   return (
     <main>
         <ul>
           {items.map((item) => (
             <li className="item" key={item.id}>
-              <input type="checkbox" checked={item.checked} />
-              <label>{item.item}</label>
+              <input type="checkbox" onChange={() => handleChange(item.id)} checked={item.checked} />
+              <label onDoubleClick={() => handleChange(item.id)} style={(item.checked)? {textDecoration :'line-through'}:null}>{item.item}</label>
               <FaTrashAlt role="button" tabIndex="0"/>
             </li>
           ))}
