@@ -5,16 +5,16 @@
 }
 
 html {
-  font-size: 22px;
+  font-size: 18px;
 }
 
 body {
   min-height: 100vh;
-  font-family: 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Roboto', sans-serif;
+  background-color: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .App {
@@ -25,161 +25,112 @@ body {
   height: 100vh; 
   width: 100%; 
   max-width: 500px;
-  border: 1px solid mediumblue;
+  border: 1px solid #0044cc;
+  border-radius: 10px;
+  background: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   margin: auto;
+  overflow: hidden;
 }
 
 header {
   width: 100%;
-  padding: 0 0.25em;
-  background-color: mediumblue;
-  color: aliceblue;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  padding: 0.75rem;
+  background-color: #3f8ef5;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
 }
 
 main {
   width: 100%;
-  display: flex;
-  flex-direction: column;
   flex-grow: 1;
-  justify-content: flex-start;
-  align-items: center;
   overflow-y: auto;
+  padding: 10px;
 }
 
 footer {
   width: 100%;
-  padding: 0.25em;
-  background-color: mediumblue;
-  color: aliceblue;
-  display: grid;
-  place-content: center;
+  padding: 0.5rem;
+  background-color: #3f8ef5;
+  color: white;
+  text-align: center;
+  font-weight: bold;
 }
 
 ul {
   width: 100%;
   list-style: none;
-  padding: 0 0.25rem 0.25rem;
-}
-
-ul li::before {
-  content: "\200B";
+  padding: 0;
 }
 
 .item {
   display: flex;
-  justify-content: flex-start;
   align-items: center;
-  padding: 0.5rem 0 0.5rem 0.5rem;
-  margin: 0.25rem 0;
-  background-color: #eee;
-}
-
-.item:first-child {
-  margin: 0;
+  justify-content: space-between;
+  padding: 0.75rem;
+  margin: 0.5rem 0;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .item input[type="checkbox"] {
-  text-align: center;
-  width: 2.5rem;
-  width: 48px;
-  min-width: 48px;
-  height: 2.5rem;
-  height: 48px;
-  min-height: 48px;
+  width: 22px;
+  height: 22px;
   cursor: pointer;
-  margin-right: 0.5rem;
+  margin-right: 10px;
 }
 
-.item input[type="checkbox"]:focus + label {
-  text-decoration: underline;
-}
-
-.item > label {
-  font-size: 0.75rem;
+.item label {
   flex-grow: 1;
+  font-size: 1rem;
 }
 
 .item svg {
-  width: 48px;
-  min-width: 48px;
-  height: 36px;
-  font-size: 1rem;
-  color: steelblue;
+  width: 30px;
+  height: 30px;
+  color: #0077b6;
   cursor: pointer;
+  transition: color 0.3s ease;
 }
 
-.item svg:focus, 
 .item svg:hover {
   color: red;
-  outline: none;
 }
 
-.addForm {
+.addForm, .searchForm {
   width: 100%;
   display: flex;
-  justify-content: flex-start;
-  margin: 0.5rem 0 0;
-  padding: 0 0.5rem 0.25rem;
-  border-bottom: 1px solid #eee;
-}
-
-.addForm label {
-  position: absolute;
-  left: -99999px;
-}
-
-.addForm input[type='text'] {
-  flex-grow: 1;
-  max-width: calc(100% - 50px);
-  min-height: 48px;
-  font-size: 1rem;
-  padding: 0.25rem;
-  border-radius: 0.25rem;
-  margin-right: 0.25rem;
-  outline: none;
-}
-
-button {
-  height: 48px;
-  min-width: 48px;
-  border-radius: 0.25rem;
   padding: 0.5rem;
-  font-size: 1rem;
-  background-color: aliceblue;
-  color: mediumblue;
-  cursor: pointer;
+  border-bottom: 2px solid #ddd;
 }
 
-button:focus, 
-button:hover {
-  color: white;
-  background-color: limegreen;
-  outline: none;
-}
-
-.searchForm {
-  width: 100%;
-  display: flex;
-  justify-content: flex-start;
-  margin: 0.25rem 0 0;
-  padding: 0 0.5rem 0.25rem;
-  border-bottom: 1px solid #eee;
-}
-
-.searchForm label {
-  position: absolute;
-  left: -99999px;
-}
-
-.searchForm input[type='text'] {
+.addForm input, .searchForm input {
   flex-grow: 1;
-  max-width: 100%;
-  min-height: 48px;
+  padding: 10px;
   font-size: 1rem;
-  padding: 0.25rem;
-  border-radius: 0.25rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
   outline: none;
+}
+.addForm label, .searchForm label {
+  font-size: 1rem;
+  margin-right: 10px;
+  margin-top: 12px;
+}
+button {
+  padding: 10px;
+  border: none;
+  background: #0077b6;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #005f8a;
 }
