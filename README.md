@@ -11,7 +11,6 @@ A simple and responsive To-Do List application built with React.
 
 ## Technologies Used
 - React.js
-- Tailwind CSS (or your chosen CSS framework)
 - Local Storage for data persistence
 
 ## Installation
