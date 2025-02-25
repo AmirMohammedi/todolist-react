@@ -17,7 +17,7 @@ function App() {
       try{
         const response = await fetch(API_URL);
         if(!response.ok){
-          throw new Error('Could not fetch the data');
+          throw new Error('Error : Could not fetch the data');
         }
         const data = await response.json();
         setItems(data);
